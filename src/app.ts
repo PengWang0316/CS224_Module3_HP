@@ -3,7 +3,6 @@ import dotenv from 'dotenv';
 import bodyParser from 'body-parser';
 
 import orderController from './controllers/order-controller';
-import logger from './middlewares/logging';
 
 dotenv.config();
 const app = express();
@@ -13,7 +12,6 @@ app.use(bodyParser.json());
 //support parsing of application/x-www-form-urlencoded post data
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use(logger);
 app.use(express.static('../public'));
 app.set('views', './views');
 app.set('view engine', 'ejs');
