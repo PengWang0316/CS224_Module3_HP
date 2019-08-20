@@ -1,8 +1,10 @@
 import express from 'express';
+import dotenv from 'dotenv';
 
 import orderController from './controllers/order-controller';
 import logger from './middlewares/logging';
 
+dotenv.config();
 const app = express();
 
 app.use(logger);
